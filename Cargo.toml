@@ -1,0 +1,23 @@
+[package]
+name = "fledge-plugin-scratch"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+description = "Throwaway scratch notes scoped to your current repo."
+license = "MIT"
+authors = ["0xLeif"]
+repository = "https://github.com/CorvidLabs/fledge-plugin-scratch"
+
+[[bin]]
+name = "fledge-scratch"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = "0.4"
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+strip = true
+lto = "thin"
+codegen-units = 1
