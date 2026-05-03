@@ -59,10 +59,7 @@ fn create() -> Result<()> {
     let stamp = Local::now().format("%Y-%m-%d_%H%M%S");
     let path = dir.join(format!("{stamp}.md"));
 
-    let header = format!(
-        "# scratch — {}\n\n",
-        Local::now().format("%Y-%m-%d %H:%M")
-    );
+    let header = format!("# scratch — {}\n\n", Local::now().format("%Y-%m-%d %H:%M"));
     fs::write(&path, header).context("writing scratch file")?;
 
     println!("New scratch: {}", path.display());
@@ -171,12 +168,7 @@ fn collect_scratches(dir: &Path) -> Result<Vec<fs::DirEntry>> {
     let mut entries: Vec<fs::DirEntry> = fs::read_dir(dir)
         .context("reading scratch directory")?
         .filter_map(|e| e.ok())
-        .filter(|e| {
-            e.path()
-                .extension()
-                .map(|ext| ext == "md")
-                .unwrap_or(false)
-        })
+        .filter(|e| e.path().extension().map(|ext| ext == "md").unwrap_or(false))
         .collect();
 
     entries.sort_by_key(|e| {
