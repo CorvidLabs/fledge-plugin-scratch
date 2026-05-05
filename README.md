@@ -39,6 +39,22 @@ export EDITOR="hx"            # Helix
 
 GUI editors need a "wait" flag (`--wait`, `-w`) so the editor blocks until you close the file — otherwise scratch returns immediately and you don't see the "Saved:" confirmation.
 
+## Build from source
+
+```bash
+git clone https://github.com/CorvidLabs/fledge-plugin-scratch.git
+cd fledge-plugin-scratch
+cargo build --release
+```
+
+The binary is at `target/release/fledge-scratch`.
+
+## Contributing
+
+1. Fork the repo and create a feature branch.
+2. Run `cargo clippy -- -D warnings` and `cargo fmt --check` before pushing.
+3. Open a PR against `main`.
+
 ## License
 
 MIT
