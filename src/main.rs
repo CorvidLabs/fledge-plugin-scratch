@@ -254,15 +254,23 @@ mod tests {
     }
 
     fn tempdir() -> PathBuf {
+        use std::sync::atomic::{AtomicU64, Ordering};
+        // A monotonic counter guarantees a unique path per call even when the
+        // system clock resolution is too coarse to distinguish two tests that
+        // run in parallel (as happens on macOS), which would otherwise collide
+        // and pollute each other's directories.
+        static COUNTER: AtomicU64 = AtomicU64::new(0);
+        let unique = COUNTER.fetch_add(1, Ordering::Relaxed);
         let dir = std::env::temp_dir()
             .join("fledge-scratch-tests")
             .join(format!(
-                "{}-{}",
+                "{}-{}-{}",
                 std::process::id(),
                 std::time::SystemTime::now()
                     .duration_since(std::time::UNIX_EPOCH)
                     .unwrap()
-                    .as_nanos()
+                    .as_nanos(),
+                unique
             ));
         std::fs::create_dir_all(&dir).unwrap();
         dir
