@@ -1,0 +1,5 @@
+[registry]
+name = "fledge-plugin-scratch-trust-wave6"
+
+[specs]
+scratch = "specs/scratch/scratch.spec.md"
