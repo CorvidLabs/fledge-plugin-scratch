@@ -1,0 +1,25 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783926567,
+      "digest": "490fba074754472c48bec3d02dfafb881a5ca195cdac69741e3c178491ee8fd6",
+      "note": "Authorized by the approved organization-wide SpecSync 5.0.1 and Trust 1.0.0 rollout plan and explicit merge goal."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783926610,
+      "digest": "bb0cb338fa7922516701099cbe45e6893bb661105b9d4f246628575d59733dc2",
+      "note": "Reapproved after truthful task and no-spec-change modeling corrections under the authorized rollout plan."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1783926665,
+      "digest": "c1c1ba98d3f02d3fc5a001fda63b9882d725e531dba409ccc373ca7a81aa2a2f",
+      "note": "Closing approval recorded under the explicit rollout-and-merge authorization after the configured native verification passed."
+    }
+  ]
+}
