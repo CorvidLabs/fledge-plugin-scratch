@@ -5,13 +5,11 @@
   "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for the Scratch Fledge plugin",
   "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for the Scratch Fledge plugin",
   "kind": "migration",
-  "state": "draft",
+  "state": "accepted",
   "base_commit": "87da42f428c614874ded216bbaa0565e688ca8bd",
   "created_at": 1783882589,
-  "updated_at": 1783882595,
-  "affected_specs": [
-    "scratch"
-  ],
+  "updated_at": 1783926665,
+  "affected_specs": [],
   "affected_paths": [
     "src/",
     "Cargo.toml",
@@ -23,8 +21,8 @@
     "specs/",
     ".trust.toml"
   ],
-  "no_spec_change": false,
-  "no_spec_change_rationale": null,
+  "no_spec_change": true,
+  "no_spec_change_rationale": "This migration documents existing Scratch behavior and adds governance configuration without changing the plugin's runtime contract.",
   "acceptance_criteria": [
     "SpecSync strict coverage is 100%; all four integrations are installed; Trust doctor and verification pass; formatting, Clippy, four filesystem tests, release build, help smoke, and cross-platform hosted builds remain green."
   ],
